@@ -1,4 +1,7 @@
 
+using Microsoft.EntityFrameworkCore;
+using SchoolWebApi.Models;
+
 namespace SchoolWebApi
 {
     public class Program
@@ -11,8 +14,16 @@ namespace SchoolWebApi
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+            
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+            
+            // ¸ê®Æ®w
+            builder.Services.AddDbContext<SchoolSystemContext>(options
+                => options.UseSqlServer(builder.Configuration.GetConnectionString("WebDatabase")));
+
+            // AutoMapper
+            builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
             var app = builder.Build();
 
