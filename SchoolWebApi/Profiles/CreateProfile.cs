@@ -12,6 +12,7 @@ namespace SchoolWebApi.Profiles
             //student
             // post
             CreateMap<StudentPostDto, Student>();
+            CreateMap<StudentCoursePostDto, SelectClass>();
 
             // get
             CreateMap<Course, AllCourseGetDto>()
@@ -21,16 +22,15 @@ namespace SchoolWebApi.Profiles
 
             CreateMap<SelectClass, MyCourseDto>()
                 .ForMember(dest => dest.CourseName, opt => opt.MapFrom(src => src.Course.CourseName))
-                .ForMember(dest => dest.TName, opt => opt.MapFrom(src => src.Course.Teacher!.TName));
+                .ForMember(dest => dest.TName, opt => opt.MapFrom(src => src.Course.Teacher!.TName))
+                .ForMember(dest => dest.StartTime, opt => opt.MapFrom(src => src.Course.StartTime))
+                .ForMember(dest => dest.EndTime, opt => opt.MapFrom(src => src.Course.EndTime))
+                .ForMember(dest => dest.Day, opt => opt.MapFrom(src => src.Course.Day));
            
             //Teacher
             // post
             CreateMap<TeacherPostDto, Teacher>(); 
             CreateMap<CoursePostDto, Course>();
-            //get
-            CreateMap<SelectClass, GetStudent>()
-                .ForMember(dest => dest.SName, opt => opt.MapFrom(src => src.Student.SName));
-     
         }
     }
 }

@@ -1,11 +1,12 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using SchoolWebApi.Dtos.studentDtos;
 using SchoolWebApi.Dtos.TeacherDtos;
 using SchoolWebApi.Models;
+using System.Diagnostics.Metrics;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-
 namespace SchoolWebApi.Controllers
 {
     [Route("api/[controller]")]
@@ -15,6 +16,10 @@ namespace SchoolWebApi.Controllers
         private readonly SchoolSystemContext _dbContext;
 
         private readonly IMapper _mapper;
+
+        public static Random random = new Random();
+
+        public int randomDay = random.Next(1, 31);
 
         // 初始化變數
         public TeacherController(SchoolSystemContext schoolSystemContext, IMapper mapper)
@@ -29,29 +34,23 @@ namespace SchoolWebApi.Controllers
             return new string[] { "NO", "VALUE" };
         }
 
-        // 獲得
+        // 課程、學生人數、名子
         [HttpGet("getStudent")]
         public IEnumerable<GetStudent> GetStudent(string TName)
         {
             List<SelectClass> studentSelect =  _dbContext.SelectClasses
-                .Include(s => s.Student).Include(t => t.Course.Teacher).ToList();
+                .Include(s => s.Student).Include(t => t.Course.Teacher).Where(t => t.Course.Teacher!.TName == TName).ToList();
 
-            List<GetStudent> result = [];
-
-            foreach (var teacher in studentSelect)
+            List<GetStudent> result = studentSelect.GroupBy(c => c.Course.CourseName).Select(g => new GetStudent
             {
-                if (teacher.Course.Teacher?.TName == TName)
-                {
-                    var studentName = teacher.Student.SName;
+                CourseName = g.Key,
+                SName = string.Join(',', g.Select(s => s.Student.SName)),
+                StudentNumber = g.Count(),
 
-                    var mystudent = _mapper.Map<GetStudent>(studentName);
-
-                    result.Add(mystudent);
-
-                }
-            }
+            }).ToList();
 
             return result;
+
         }
         
         // 老師註冊
@@ -60,13 +59,9 @@ namespace SchoolWebApi.Controllers
         {
             Teacher teacher = _mapper.Map<Teacher>(value);
 
-            var random = new Random();
-
-            int randomDay = random.Next(1, 31);
-
             teacher.Tid = Guid.NewGuid();
 
-            teacher.TStart = DateTime.Now.AddDays(- randomDay);
+            teacher.TStart = DateTime.Now.AddDays(-randomDay);
 
             teacher.TEnd = DateTime.Now;
 
@@ -77,15 +72,11 @@ namespace SchoolWebApi.Controllers
 
        // 加入課程
        [HttpPost("TeacherPost/AddCourse")]
-        public IActionResult CoursePost([FromBody] CoursePostDto value)
-        {
+       public IActionResult CoursePost([FromBody] CoursePostDto value)
+       {
             Course course = _mapper.Map<Course>(value);
 
             course.Cid = Guid.NewGuid();
-
-            var random = new Random();
-
-            int randomDay = random.Next(1, 31);
 
             course.CStart = DateTime.Now.AddDays(-randomDay);
 
@@ -102,11 +93,9 @@ namespace SchoolWebApi.Controllers
             }
            
             _dbContext.Courses.Add(course);
-
             _dbContext.SaveChanges();
 
             return Ok(course);
-
-        } 
+       } 
     }
 }

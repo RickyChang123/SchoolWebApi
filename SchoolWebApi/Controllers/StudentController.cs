@@ -18,7 +18,11 @@ namespace SchoolWebApi.Controllers
 
         private readonly IMapper _mapper;
 
-        //初始化變數
+        public static Random random = new Random();
+
+        public int randomDay = random.Next(1, 31);
+
+        // 初始化變數
         public StudentController(SchoolSystemContext schoolSystemContext, IMapper mapper)
         {
             _dbContext = schoolSystemContext;
@@ -31,7 +35,7 @@ namespace SchoolWebApi.Controllers
             return new string[] { "NO", "VALUE" };
         }
 
-        //獲得全部課程
+        // 獲得全部課程
         [HttpGet("studentGet")]
         public IEnumerable<AllCourseGetDto> GetClass()
         {
@@ -44,7 +48,7 @@ namespace SchoolWebApi.Controllers
             return result;
         }
 
-        //已選課程
+        // 獲得已選課程
         [HttpGet("GetYourCourse")]
         public IEnumerable<MyCourseDto> YourCourse(string StudentName)
         {
@@ -53,16 +57,9 @@ namespace SchoolWebApi.Controllers
                 .Include(n => n.Student)
                 .ToList();
 
-            List<MyCourseDto> result = [];
-
-            foreach (var name in myCourse)
-            {
-                if (name.Student.SName == StudentName)
-                {
-                    var course = _mapper.Map<MyCourseDto>(name);
-                    result.Add(course);
-                }
-            }
+            List<MyCourseDto> result = myCourse
+                .Where(sn => sn.Student.SName == StudentName)
+                .Select(value => _mapper.Map<MyCourseDto>(value)).ToList();
 
             return result;
         }
@@ -73,10 +70,6 @@ namespace SchoolWebApi.Controllers
         {
 
             Student student = _mapper.Map<Student>(value);
-
-            var random = new Random();
-
-            int randomDay = random.Next(1, 31);
 
             student.Sid = Guid.NewGuid();
             student.SStart = DateTime.Now.AddDays(-randomDay);
@@ -93,7 +86,6 @@ namespace SchoolWebApi.Controllers
         [HttpPost("SelectClass")]
         public  IActionResult SelectCourse([FromBody] StudentCoursePostDto value)
         {
-
             Guid course_id = _dbContext.Courses.Where(c => c.CourseName == value.CourseName)
                 .Select( c => c.Cid )
                 .FirstOrDefault();
@@ -101,11 +93,12 @@ namespace SchoolWebApi.Controllers
             Guid student_id = _dbContext.Students.Where(s => s.SName == value.SName)
                 .Select(s=>s.Sid )
                 .FirstOrDefault();
-
+            
             List<SelectClass> selectedCourses = _dbContext.SelectClasses
                 .Where(sc => sc.StudentId == student_id)
                 .ToList();
 
+            //課程是否重複選
             bool isAlreadySelect = selectedCourses.Any(src => src.CourseId == course_id);
 
             if (isAlreadySelect)
@@ -113,19 +106,13 @@ namespace SchoolWebApi.Controllers
                 return BadRequest("Already select this course.");
             }
 
-            var random = new Random();
+            SelectClass select = _mapper.Map<SelectClass>(value);
 
-            int randomDay = random.Next(1, 31);
-
-            var select = new SelectClass
-            {
-                Eid = Guid.NewGuid(),
-                StudentId = student_id,
-                CourseId = course_id,
-                EStart = DateTime.Now.AddDays(-randomDay),
-                EEnd = DateTime.Now,
-
-            };
+            select.Eid =Guid.NewGuid();
+            select.CourseId = course_id;
+            select.StudentId = student_id;  
+            select.EStart = DateTime.Now.AddDays(-randomDay);
+            select.EEnd = DateTime.Now;           
 
             _dbContext.SelectClasses.Add(select);
             _dbContext.SaveChanges();
@@ -133,6 +120,5 @@ namespace SchoolWebApi.Controllers
             return Ok(select);
         
         }
-
     }
 }
