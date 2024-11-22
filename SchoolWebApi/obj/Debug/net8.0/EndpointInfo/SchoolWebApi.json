@@ -43,7 +43,7 @@
         }
       }
     },
-    "/api/Student/studentGet": {
+    "/api/Student/AllClass": {
       "get": {
         "tags": [
           "Student"
@@ -81,20 +81,30 @@
         }
       }
     },
-    "/api/Student/GetYourCourse": {
-      "get": {
+    "/api/Student/YourCourse": {
+      "post": {
         "tags": [
           "Student"
         ],
-        "parameters": [
-          {
-            "name": "StudentName",
-            "in": "query",
-            "schema": {
-              "type": "string"
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/YourCourseParameter"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/YourCourseParameter"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/YourCourseParameter"
+              }
             }
           }
-        ],
+        },
         "responses": {
           "200": {
             "description": "OK",
@@ -128,7 +138,7 @@
         }
       }
     },
-    "/api/Student/studentRegister": {
+    "/api/Student/StudentRegister": {
       "post": {
         "tags": [
           "Student"
@@ -190,6 +200,37 @@
         }
       }
     },
+    "/api/Student/Login": {
+      "post": {
+        "tags": [
+          "Student"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StudentLoginParamter"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StudentLoginParamter"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/StudentLoginParamter"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Teacher": {
       "get": {
         "tags": [
@@ -228,7 +269,7 @@
         }
       }
     },
-    "/api/Teacher/getStudent": {
+    "/api/Teacher/GetStudent": {
       "get": {
         "tags": [
           "Teacher"
@@ -430,9 +471,17 @@
       "GetStudent": {
         "type": "object",
         "properties": {
+          "courseName": {
+            "type": "string",
+            "nullable": true
+          },
           "sName": {
             "type": "string",
             "nullable": true
+          },
+          "studentNumber": {
+            "type": "integer",
+            "format": "int32"
           }
         },
         "additionalProperties": false
@@ -445,6 +494,20 @@
             "nullable": true
           },
           "tName": {
+            "type": "string",
+            "nullable": true
+          },
+          "startTime": {
+            "type": "string",
+            "format": "time",
+            "nullable": true
+          },
+          "endTime": {
+            "type": "string",
+            "format": "time",
+            "nullable": true
+          },
+          "day": {
             "type": "string",
             "nullable": true
           }
@@ -465,16 +528,45 @@
         },
         "additionalProperties": false
       },
+      "StudentLoginParamter": {
+        "required": [
+          "email",
+          "password"
+        ],
+        "type": "object",
+        "properties": {
+          "email": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "password": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
       "StudentPostDto": {
+        "required": [
+          "sEmail",
+          "sName",
+          "sPassword"
+        ],
         "type": "object",
         "properties": {
           "sName": {
-            "type": "string",
-            "nullable": true
+            "minLength": 1,
+            "type": "string"
           },
           "sEmail": {
+            "minLength": 1,
             "type": "string",
-            "nullable": true
+            "format": "email"
+          },
+          "sPassword": {
+            "maxLength": 15,
+            "minLength": 6,
+            "type": "string"
           }
         },
         "additionalProperties": false
@@ -491,6 +583,16 @@
             "nullable": true
           },
           "tOffice": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "YourCourseParameter": {
+        "type": "object",
+        "properties": {
+          "studentName": {
             "type": "string",
             "nullable": true
           }

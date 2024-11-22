@@ -21,21 +21,15 @@
   },
   {
     "ContainingType": "SchoolWebApi.Controllers.StudentController",
-    "Method": "YourCourse",
-    "RelativePath": "api/Student/GetYourCourse",
+    "Method": "GetClass",
+    "RelativePath": "api/Student/AllClass",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [
-      {
-        "Name": "StudentName",
-        "Type": "System.String",
-        "IsRequired": false
-      }
-    ],
+    "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[SchoolWebApi.Dtos.studentDtos.MyCourseDto, SchoolWebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[SchoolWebApi.Dtos.studentDtos.AllCourseGetDto, SchoolWebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -44,6 +38,22 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "SchoolWebApi.Controllers.StudentController",
+    "Method": "StudentLogin",
+    "RelativePath": "api/Student/Login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "value",
+        "Type": "SchoolWebApi.Parameters.StudentLoginParamter",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   },
   {
     "ContainingType": "SchoolWebApi.Controllers.StudentController",
@@ -63,28 +73,8 @@
   },
   {
     "ContainingType": "SchoolWebApi.Controllers.StudentController",
-    "Method": "GetClass",
-    "RelativePath": "api/Student/studentGet",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[SchoolWebApi.Dtos.studentDtos.AllCourseGetDto, SchoolWebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "SchoolWebApi.Controllers.StudentController",
     "Method": "SPost",
-    "RelativePath": "api/Student/studentRegister",
+    "RelativePath": "api/Student/StudentRegister",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -96,6 +86,32 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SchoolWebApi.Controllers.StudentController",
+    "Method": "YourCourse",
+    "RelativePath": "api/Student/YourCourse",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "value",
+        "Type": "SchoolWebApi.Parameters.YourCourseParameter",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[SchoolWebApi.Dtos.studentDtos.MyCourseDto, SchoolWebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "SchoolWebApi.Controllers.TeacherController",
@@ -120,7 +136,7 @@
   {
     "ContainingType": "SchoolWebApi.Controllers.TeacherController",
     "Method": "GetStudent",
-    "RelativePath": "api/Teacher/getStudent",
+    "RelativePath": "api/Teacher/GetStudent",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,

@@ -3,16 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\rickychang\\Desktop\\SchoolWebApi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D41FA734-20B8-47F8-948D-AB4ED0AF2C29}|SchoolWebApi\\SchoolWebApi.csproj|c:\\users\\rickychang\\desktop\\schoolwebapi\\schoolwebapi\\controllers\\teachercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D41FA734-20B8-47F8-948D-AB4ED0AF2C29}|SchoolWebApi\\SchoolWebApi.csproj|solutionrelative:schoolwebapi\\controllers\\teachercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D41FA734-20B8-47F8-948D-AB4ED0AF2C29}|SchoolWebApi\\SchoolWebApi.csproj|c:\\users\\rickychang\\desktop\\schoolwebapi\\schoolwebapi\\models\\schoolsystemcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D41FA734-20B8-47F8-948D-AB4ED0AF2C29}|SchoolWebApi\\SchoolWebApi.csproj|solutionrelative:schoolwebapi\\models\\schoolsystemcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D41FA734-20B8-47F8-948D-AB4ED0AF2C29}|SchoolWebApi\\SchoolWebApi.csproj|c:\\users\\rickychang\\desktop\\schoolwebapi\\schoolwebapi\\models\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D41FA734-20B8-47F8-948D-AB4ED0AF2C29}|SchoolWebApi\\SchoolWebApi.csproj|solutionrelative:schoolwebapi\\models\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D41FA734-20B8-47F8-948D-AB4ED0AF2C29}|SchoolWebApi\\SchoolWebApi.csproj|c:\\users\\rickychang\\desktop\\schoolwebapi\\schoolwebapi\\dtos\\studentdtos\\studentpostdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D41FA734-20B8-47F8-948D-AB4ED0AF2C29}|SchoolWebApi\\SchoolWebApi.csproj|solutionrelative:schoolwebapi\\dtos\\studentdtos\\studentpostdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D41FA734-20B8-47F8-948D-AB4ED0AF2C29}|SchoolWebApi\\SchoolWebApi.csproj|c:\\users\\rickychang\\desktop\\schoolwebapi\\schoolwebapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D41FA734-20B8-47F8-948D-AB4ED0AF2C29}|SchoolWebApi\\SchoolWebApi.csproj|solutionrelative:schoolwebapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D41FA734-20B8-47F8-948D-AB4ED0AF2C29}|SchoolWebApi\\SchoolWebApi.csproj|c:\\users\\rickychang\\desktop\\schoolwebapi\\schoolwebapi\\controllers\\studentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D41FA734-20B8-47F8-948D-AB4ED0AF2C29}|SchoolWebApi\\SchoolWebApi.csproj|solutionrelative:schoolwebapi\\controllers\\studentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D41FA734-20B8-47F8-948D-AB4ED0AF2C29}|SchoolWebApi\\SchoolWebApi.csproj|c:\\users\\rickychang\\desktop\\schoolwebapi\\schoolwebapi\\profiles\\createprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D41FA734-20B8-47F8-948D-AB4ED0AF2C29}|SchoolWebApi\\SchoolWebApi.csproj|solutionrelative:schoolwebapi\\profiles\\createprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D41FA734-20B8-47F8-948D-AB4ED0AF2C29}|SchoolWebApi\\SchoolWebApi.csproj|c:\\users\\rickychang\\desktop\\schoolwebapi\\schoolwebapi\\dtos\\studentdtos\\studentcoursepostdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D41FA734-20B8-47F8-948D-AB4ED0AF2C29}|SchoolWebApi\\SchoolWebApi.csproj|solutionrelative:schoolwebapi\\dtos\\studentdtos\\studentcoursepostdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D41FA734-20B8-47F8-948D-AB4ED0AF2C29}|SchoolWebApi\\SchoolWebApi.csproj|c:\\users\\rickychang\\desktop\\schoolwebapi\\schoolwebapi\\parameters\\yourcourseparameter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D41FA734-20B8-47F8-948D-AB4ED0AF2C29}|SchoolWebApi\\SchoolWebApi.csproj|solutionrelative:schoolwebapi\\parameters\\yourcourseparameter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,50 +38,102 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SchoolSystemContext.cs",
+              "DocumentMoniker": "C:\\Users\\rickychang\\Desktop\\SchoolWebApi\\SchoolWebApi\\Models\\SchoolSystemContext.cs",
+              "RelativeDocumentMoniker": "SchoolWebApi\\Models\\SchoolSystemContext.cs",
+              "ToolTip": "C:\\Users\\rickychang\\Desktop\\SchoolWebApi\\SchoolWebApi\\Models\\SchoolSystemContext.cs",
+              "RelativeToolTip": "SchoolWebApi\\Models\\SchoolSystemContext.cs",
+              "ViewState": "AgIAAGIAAAAAAAAAAAAUwGkAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-22T08:00:59.849Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "StudentController.cs",
-              "DocumentMoniker": "C:\\Users\\rickychang\\Desktop\\SchoolWebApi\\SchoolWebApi\\Controllers\\StudentController.cs",
-              "RelativeDocumentMoniker": "SchoolWebApi\\Controllers\\StudentController.cs",
-              "ToolTip": "C:\\Users\\rickychang\\Desktop\\SchoolWebApi\\SchoolWebApi\\Controllers\\StudentController.cs",
-              "RelativeToolTip": "SchoolWebApi\\Controllers\\StudentController.cs",
-              "ViewState": "AgIAAGYAAAAAAAAAAAAuwAAAAAAAAAAAAAAAAA==",
+              "Title": "Student.cs",
+              "DocumentMoniker": "C:\\Users\\rickychang\\Desktop\\SchoolWebApi\\SchoolWebApi\\Models\\Student.cs",
+              "RelativeDocumentMoniker": "SchoolWebApi\\Models\\Student.cs",
+              "ToolTip": "C:\\Users\\rickychang\\Desktop\\SchoolWebApi\\SchoolWebApi\\Models\\Student.cs",
+              "RelativeToolTip": "SchoolWebApi\\Models\\Student.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAAUAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-20T07:33:21.78Z",
+              "WhenOpened": "2024-11-22T08:00:32.099Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "CreateProfile.cs",
-              "DocumentMoniker": "C:\\Users\\rickychang\\Desktop\\SchoolWebApi\\SchoolWebApi\\Profiles\\CreateProfile.cs",
-              "RelativeDocumentMoniker": "SchoolWebApi\\Profiles\\CreateProfile.cs",
-              "ToolTip": "C:\\Users\\rickychang\\Desktop\\SchoolWebApi\\SchoolWebApi\\Profiles\\CreateProfile.cs",
-              "RelativeToolTip": "SchoolWebApi\\Profiles\\CreateProfile.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAowBcAAABcAAAAAAAAAA==",
+              "Title": "StudentPostDto.cs",
+              "DocumentMoniker": "C:\\Users\\rickychang\\Desktop\\SchoolWebApi\\SchoolWebApi\\Dtos\\studentDtos\\StudentPostDto.cs",
+              "RelativeDocumentMoniker": "SchoolWebApi\\Dtos\\studentDtos\\StudentPostDto.cs",
+              "ToolTip": "C:\\Users\\rickychang\\Desktop\\SchoolWebApi\\SchoolWebApi\\Dtos\\studentDtos\\StudentPostDto.cs",
+              "RelativeToolTip": "SchoolWebApi\\Dtos\\studentDtos\\StudentPostDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-20T07:24:11.387Z",
+              "WhenOpened": "2024-11-22T08:00:12.259Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "TeacherController.cs",
-              "DocumentMoniker": "C:\\Users\\rickychang\\Desktop\\SchoolWebApi\\SchoolWebApi\\Controllers\\TeacherController.cs",
-              "RelativeDocumentMoniker": "SchoolWebApi\\Controllers\\TeacherController.cs",
-              "ToolTip": "C:\\Users\\rickychang\\Desktop\\SchoolWebApi\\SchoolWebApi\\Controllers\\TeacherController.cs",
-              "RelativeToolTip": "SchoolWebApi\\Controllers\\TeacherController.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAAxwDAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "StudentCoursePostDto.cs",
+              "DocumentMoniker": "C:\\Users\\rickychang\\Desktop\\SchoolWebApi\\SchoolWebApi\\Dtos\\studentDtos\\StudentCoursePostDto.cs",
+              "RelativeDocumentMoniker": "SchoolWebApi\\Dtos\\studentDtos\\StudentCoursePostDto.cs",
+              "ToolTip": "C:\\Users\\rickychang\\Desktop\\SchoolWebApi\\SchoolWebApi\\Dtos\\studentDtos\\StudentCoursePostDto.cs",
+              "RelativeToolTip": "SchoolWebApi\\Dtos\\studentDtos\\StudentCoursePostDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-20T07:11:23.066Z",
+              "WhenOpened": "2024-11-22T07:51:19.521Z",
               "EditorCaption": ""
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "YourCourseParameter.cs",
+              "DocumentMoniker": "C:\\Users\\rickychang\\Desktop\\SchoolWebApi\\SchoolWebApi\\Parameters\\YourCourseParameter.cs",
+              "RelativeDocumentMoniker": "SchoolWebApi\\Parameters\\YourCourseParameter.cs",
+              "ToolTip": "C:\\Users\\rickychang\\Desktop\\SchoolWebApi\\SchoolWebApi\\Parameters\\YourCourseParameter.cs",
+              "RelativeToolTip": "SchoolWebApi\\Parameters\\YourCourseParameter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-22T07:44:06.177Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\rickychang\\Desktop\\SchoolWebApi\\SchoolWebApi\\Program.cs",
+              "RelativeDocumentMoniker": "SchoolWebApi\\Program.cs",
+              "ToolTip": "C:\\Users\\rickychang\\Desktop\\SchoolWebApi\\SchoolWebApi\\Program.cs",
+              "RelativeToolTip": "SchoolWebApi\\Program.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAxwCMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-22T07:27:22.028Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "StudentController.cs",
+              "DocumentMoniker": "C:\\Users\\rickychang\\Desktop\\SchoolWebApi\\SchoolWebApi\\Controllers\\StudentController.cs",
+              "RelativeDocumentMoniker": "SchoolWebApi\\Controllers\\StudentController.cs",
+              "ToolTip": "C:\\Users\\rickychang\\Desktop\\SchoolWebApi\\SchoolWebApi\\Controllers\\StudentController.cs",
+              "RelativeToolTip": "SchoolWebApi\\Controllers\\StudentController.cs",
+              "ViewState": "AgIAAIUAAAAAAAAAAIA0wFsAAABKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-22T06:59:29.992Z",
+              "EditorCaption": ""
             }
           ]
         }
