@@ -35,9 +35,10 @@ namespace SchoolWebApi.Controllers
         }
 
         // 課程、學生人數、名子
-        [HttpGet("getStudent")]
+        [HttpGet("GetStudent")]
         public IEnumerable<GetStudent> GetStudent(string TName)
         {
+
             List<SelectClass> studentSelect =  _dbContext.SelectClasses
                 .Include(s => s.Student).Include(t => t.Course.Teacher).Where(t => t.Course.Teacher!.TName == TName).ToList();
 
@@ -50,7 +51,6 @@ namespace SchoolWebApi.Controllers
             }).ToList();
 
             return result;
-
         }
         
         // 老師註冊

@@ -25,6 +25,15 @@ namespace SchoolWebApi
             // AutoMapper
             builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
+            // Session
+            builder.Services.AddDistributedMemoryCache();
+            builder.Services.AddSession(opt =>
+            {
+                opt.IdleTimeout = TimeSpan.FromMinutes(10);
+                opt.Cookie.HttpOnly = true;
+                opt.Cookie.IsEssential = true;
+            });
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -37,7 +46,8 @@ namespace SchoolWebApi
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
-
+            
+            app.UseSession();
 
             app.MapControllers();
 

@@ -104,6 +104,9 @@ public partial class SchoolSystemContext : DbContext
                 .HasMaxLength(50)
                 .IsUnicode(false)
                 .HasColumnName("s_email");
+            entity.Property(e => e.SPassword)
+                 .HasMaxLength(15)
+                 .HasColumnName("s_password");
             entity.Property(e => e.SEnd)
                 .HasColumnType("datetime")
                 .HasColumnName("s_end");

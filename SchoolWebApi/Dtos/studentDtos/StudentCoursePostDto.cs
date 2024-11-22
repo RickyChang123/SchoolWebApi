@@ -2,7 +2,7 @@
 {
     public class StudentCoursePostDto
     {
-        public string SName { get; set; } = null!;
+        public string? SName { get; set; }
         public string? CourseName { get; set; }
 
     }

@@ -11,6 +11,8 @@ public partial class Student
 
     public string SEmail { get; set; } = null!;
 
+    public string SPassword { get; set; } = null!;
+
     public DateTime? SStart { get; set; }
 
     public DateTime? SEnd { get; set; }
